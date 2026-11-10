@@ -1,9 +1,10 @@
 :root{
-    --color-text:#404040;
+    --color-text:#241c10;
     --color-surface:#fff;
-    --color-action:#8c1d40;
-    --color-accent:#ffc627;
-    --color-border:#d0d0d0;
+    --color-action:#e2ba80;
+    --color-accent:#714019;
+    --color-border:#714019;
+    --color-error:#b3261e;
     --color-muted:#5c6670;
     --space-3:1rem;
     --radius:.5rem;
@@ -12,9 +13,21 @@
     --layer-raised:10;
     --layer-sticky:20;
     --layer-overlay:30;
+    --font-family-main: "Sniglet", Arial, sans-serif;
+    --font-family-head: "Coiny", Georgia, serif;
 }
 *,*::before,*::after{
     box-sizing:border-box;
+}
+.sniglet-regular {
+  font-family: "Sniglet", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.coiny-regular {
+  font-family: "Coiny", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 html{
     scroll-behavior:smooth;
@@ -23,13 +36,14 @@ body{
     margin:0;
     color:var(--color-text);
     background:var(--color-surface);
-    font-family:Arial,sans-serif;
+    font-family:var(--font-family-main);
     line-height:1.6;
 }
 .feature-header{
     position:relative;
     padding:clamp(2rem,7vw,6rem);
     background:var(--color-action);
+    font-family:var(--font-family-head);
     color:#fff;
 }
 .eyebrow{
