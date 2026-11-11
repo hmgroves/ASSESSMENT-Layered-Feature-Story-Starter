@@ -104,11 +104,11 @@ img{
     border-inline-start:.4rem solid var(--color-accent);
     font-size:1.35rem;
 }
-.shape-portrait{
+/*.shape-portrait{
     width:min(45%,20rem);
     margin:0 1rem 1rem 0;
     border-radius:50%;
-}
+}*/
 .documentation{
     grid-column:1/-1;
     padding:1rem;
@@ -129,16 +129,37 @@ img{
         margin-inline-start:-4rem;
         background:var(--color-surface);;
     }
-    @supports (shape-outside:circle(50%)){
+}
+    /*@supports (shape-outside:url(assets/wobble2.png)){
         .shape-portrait{
-            float:inline-start;
-            shape-outside:circle(50%);
+            float:left;
+            width: 620px;
+            height: 620px;*/
+            /*shape-outside:circle(50%);
+            shape-outside: url(assets/wobble2.png);
+            shape-image-threshold: 0.5;
             shape-margin:1rem;}
         }
-    }
+    }*/
+    .shape-portrait{
+            float:left;
+            width: 620px;
+            height: 620px;
+            shape-outside: url(/assets/wobble2.png);
+            shape-image-threshold: 0.5;
+            shape-margin:1rem;
+        }
+        
+        
     @supports (clip-path:polygon(0 0)){
         .feature-figure img{
-            clip-path:polygon(0 0,100% 5%,94% 100%,6% 94%);}
+            clip-path:polygon(50% 0, 65% 10%, 75% 5%, 85% 10%, 75% 12%, 68% 20%,
+            70% 25%, 78% 20%, 90% 33%, 78% 30%, 73% 35%, 73% 45%, 80% 48%, 85% 55%,
+            78% 52%, 70% 55%, 68% 60%, 75% 65%, 80% 72%, 75% 68%, 65% 65%, 60% 68%,
+            62% 80%, 50% 90%, 38% 80%, 
+            40% 68%, 35% 65%, 25% 68%, 20% 72%, 25% 65%, 32% 60%, 30% 55%, 22% 52%,
+            15% 55%, 20% 48%, 27% 45%, 27% 35%, 22% 30%, 10% 33%, 22% 20%, 30% 25%,
+            32% 20%, 25% 12%, 15% 10%, 25% 5%, 35% 10%);}
         }
         :focus-visible{
             outline:.2rem solid var(--color-accent);
