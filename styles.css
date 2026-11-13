@@ -65,12 +65,13 @@ body{
 main{
     display:grid;
     gap:2rem;
-    max-width:72rem;
+    max-width:75rem;
     margin:auto;
     padding:var(--space-3);
 }
 article{
     min-width:0;
+    margin: 0 0 0 1rem;
 }
 article section{
     display:flow-root;
@@ -79,8 +80,12 @@ article section{
 }
 .story-guide{
     align-self:start;
+    margin: 0 2rem 0 0;
     padding:1rem;
     border:1px solid var(--color-border);
+}
+.story-guide h2 {
+    text-align: center;
 }
 .story-guide a{
     display:block;
@@ -126,7 +131,7 @@ img{
     .pull-quote{
         position:relative;
         z-index:var(--layer-raised);
-        margin-inline-start:-4rem;
+        margin-inline-start:-3rem;
         background:var(--color-surface);;
     }
 }
@@ -134,22 +139,22 @@ img{
         .shape-portrait{
             float:left;
             width: 620px;
-            height: 620px;*/
-            /*shape-outside:circle(50%);
+            height: 620px;
             shape-outside: url(assets/wobble2.png);
             shape-image-threshold: 0.5;
             shape-margin:1rem;}
         }
     }*/
+    @supports (shape-outside:polygon(0 0)){
     .shape-portrait{
             float:left;
-            width: 620px;
-            height: 620px;
-            shape-outside: url(assets/wobble2.png);
+            width: 420px;
+            height: 420px;
+            shape-outside: polygon(round 20px, 30% 0%, 50% 10%, 60% 33%, 85% 42%, 65% 55%, 100% 75%, 100% 85%, 90% 100%, 0% 100%);
             shape-image-threshold: 0.5;
             shape-margin:1rem;
         }
-        
+    } 
         
     @supports (clip-path:polygon(0 0)){
         .feature-figure img{
